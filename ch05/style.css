@@ -1,0 +1,115 @@
+/* 리셋, 전역 스타일 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #141414;
+  color: #fdfcfd;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* header 콤포넌트 별 레이아웃, 스타일, 세부 조정 */
+header.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 30px;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.logo {
+  color: #E50914;
+  font-size: 28px;
+}
+
+header.navbar nav a {
+  text-decoration: none;
+  color: #ccc;
+  margin-left: 20px;
+  transition: color 0.5s ease;
+}
+
+header.navbar nav a:hover {
+  color: #fdfcfd;
+}
+
+/* main .hero 콤포넌트 별 레이아웃, 스타일, 세부 조정 */
+
+section.hero {
+  min-height: 280px;
+  height: 60vh;
+
+  display: flex;
+  align-items: flex-end;
+  padding: 60px 30px;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)),
+    url("https://picsum.photos/seed/movie2/200/300") center/cover;
+}
+
+section.hero h2 {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+section.hero p {
+  font-size: 18px;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+.btn-play,
+.btn-info {
+  padding: 10px 25px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+/* main .move-row 콤포넌트 별 레이아웃, 스타일, 세부 조정 */
+section.move-row {
+  padding: 30px;
+}
+
+.move-list {
+  display: flex;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+  gap: 10px;
+  padding: 5px 0;
+}
+
+section.move-row h2 {
+  font-size: 22px;
+}
+
+.move-list img {
+  width: 150px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+}
+
+.move-list img:hover {
+  transform: scale(1.1);
+}
+
+/* footer 콤포넌트 별 레이아웃, 스타일, 세부 조정 */
+
+footer {
+  padding: 20px 30px;
+  color: #ccc;
+}
+
+
+/* 반응형 처리 */
+@media (min-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px 20px;
+  }
+}
