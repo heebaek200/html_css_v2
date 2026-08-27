@@ -1,0 +1,147 @@
+/* 전역 스타일 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  background-color: #f5f5f5;
+}
+
+/* 컴포넌트 헤더 */
+.header {
+  display: flex;
+  align-items: center;
+
+  gap: 20px;
+  padding: 12px 20px;
+  background-color: #0073e9;
+  font-size: 12px;
+}
+
+.logo {
+  color: white;
+}
+
+.search-bar {
+  display: flex;
+
+  flex: 1;
+}
+
+.search-bar input {
+  flex: 1;
+
+  padding: 10px;
+  border: none;
+  border-radius: 4px 0 0 4px;
+}
+
+.search-bar button {
+  padding: 10px 20px;
+  background-color: white;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+
+
+/* 컴포넌트 상품 카드 */
+.section-title {
+  padding: 20px;
+  font-size: 20px;
+}
+
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 16px;
+  padding: 0 20px;
+}
+
+.product-card {
+  width: calc((100% - 32px) / 3);
+  background-color: white;
+  border-radius: 4px;
+  padding: 15px;
+
+  position: relative;
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 4px;
+  display: block;
+}
+
+.product-card h3 {
+  font-size: 14px;
+  margin: 10px 0 5px 0;
+}
+
+
+/* 컴포넌트 가격 영역 */
+.price-original {
+  text-decoration: line-through;
+  color: #999;
+  font-size: 13px;
+}
+
+.price-sale {
+  font-size: 18px;
+  font-weight: bold;
+  color: #111;
+}
+
+.discount {
+  color: #ff0000;
+}
+
+.rating {
+  color: #ff9500;
+  font-size: 13px;
+}
+
+.delivery {
+  color: #0073e9;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* 뱃지 */
+.badge {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 4px 8px;
+  font-size: 10px;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.badge:nth-child(2) {
+  top: 45px;
+}
+
+.badge-rocket {
+  background-color: #0073e9;
+  color: white;
+}
+
+.badge-sale {
+  background-color: red;
+  color: white;
+}
+
+/* 세부 조정 */
+.product-card {
+  transition: transform 0.2s ease, box-shadow 0.4s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgb(0, 0, 0, 0.2);
+}
