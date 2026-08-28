@@ -1,0 +1,227 @@
+:root {
+  --gh-dark: #0d1116;
+  --gh-card: #161b22;
+  --gh-blue: #58a6ff;
+  --gh-border: #30363d;
+  --gh-text: #c9d1d9;
+
+  --gh-html: #e34f26;
+  --gh-css: #1574b6;
+  --gh-js: #f7e01d;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--gh-dark);
+  color: var(--gh-text);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* 헤더 컴포넌트 */
+.gh-header {
+  display: flex;
+  align-items: center;
+
+  background-color: var(--gh-card);
+  padding: 15px 20px;
+  gap: 20px;
+  border-bottom: 1px solid var(--gh-border);
+}
+
+.gh-logo {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.gh-search {
+  flex: 1;
+  max-width: 400px;
+  padding: 8px;
+  background-color: var(--gh-dark);
+  border: 1px soild var(--gh-border);
+  color: white;
+  border-radius: 6px;
+}
+
+/* 프로필 레이아웃 2단 구조 */
+.profile-layout {
+  display: flex;
+
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  gap: 24px;
+}
+
+.sidebar {
+  flex: 0 0 300px;
+}
+
+.main-content {
+  flex: 1;
+}
+
+/* 사이드바 컴포넌트 */
+.avatar {
+  width: 80%;
+  border-radius: 50%;
+  border: 1px solid var(--gh-border);
+  display: block;
+}
+
+.sidebar h2 {
+  font-size: 24px;
+  margin-top: 15px;
+  color: white;
+}
+
+.username {
+  color: var(--gh-blue);
+  font-size: 18px;
+  margin-top: 4px;
+}
+
+.biography {
+  margin: 12px 0;
+  line-height: 1.5;
+}
+
+.follow-info {
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.follow-info strong {
+  color: white;
+}
+
+.skills-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 12px;
+  border-radius: 20px;
+}
+
+.skills-badge.html {
+  background-color: var(--gh-html);
+  color: white;
+}
+
+.skills-badge.css {
+  background-color: var(--gh-css);
+  color: white;
+}
+
+.skills-badge.js {
+  background-color: var(--gh-js);
+  color: black;
+}
+
+/* 메인 영역 */
+.main-content h3 {
+  margin: 20px 0 10px;
+  color: white;
+  font-size: 20px;
+}
+
+.grass-grid {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 3px;
+  margin: 15px 0;
+  max-width: 90px;
+}
+
+.grass {
+  flex-shrink: 0;
+
+  width: 12px;
+  height: 12px;
+  background-color: white;
+  border-radius: 2px;
+}
+
+.level-0 {
+  background-color: var(--gh-card);
+}
+
+.level-1 {
+  background-color: #0e4529;
+}
+
+.level-2 {
+  background-color: #49d261;
+}
+
+.repo-card {
+  border: 1px solid var(--gh-border);
+  padding: 16px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  font-size: 15px;
+}
+
+/* 도전과제 */
+.repo-card h4 a {
+  color: var(--gh-blue);
+  text-decoration: none;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.repo-card h4 a:hover,
+.repo-card h4 a:active {
+  text-decoration: underline;
+}
+
+.repo-meta {
+  margin-top: 12px;
+}
+
+.repo-meta :last-child {
+  padding-left: 15px;
+}
+
+.lang-dot {
+  border-radius: 50%;
+  background-color: white;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 4px;
+}
+
+.html-dot {
+  background-color: var(--gh-html);
+}
+
+.css-dot {
+  background-color: var(--gh-css);
+}
+
+.js-dot {
+  background-color: var(--gh-js);
+}
+
+/* 반응형 처리 */
+@media (max-width: 768px) {
+  .profile-layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    text-align: center;
+  }
+
+  .avatar {
+    max-width: 200px;
+    margin: 0 auto;
+  }
+}
