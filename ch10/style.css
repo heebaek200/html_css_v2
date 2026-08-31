@@ -1,0 +1,305 @@
+/* ================================
+   CSS 변수: 색상 테마와 주요 치수
+================================ */
+:root {
+  --sp-black: #121212;
+  --sp-dark: #181818;
+  --sp-gray: #282828;
+  --sp-light: #b3b3b3;
+  --sp-green: #1db954;
+  --sp-white: #ffffff;
+
+  /* 플레이어 높이를 변수로 뺀다.
+     사이드바와 메인의 높이 계산에 세 번 쓰이므로,
+     숫자를 직접 적으면 하나만 고쳐도 레이아웃이 깨진다 */
+  --player-height: 80px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+
+  /* 테스트 후 삭제 */
+  /* outline: 1px dotted rgba(255, 0, 0, 0.3); */
+}
+
+/* 공통 */
+body {
+  background-color: var(--sp-black);
+  color: var(--sp-white);
+
+  overflow: hidden;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+a {
+  color: var(--sp-white);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* 전체 레이아웃 */
+.app-layout {
+  display: flex;
+
+  height: calc(100vh - var(--player-height));
+}
+
+/* 사이드바 */
+.sidebar {
+  flex: 0 0 240px;
+
+  background-color: var(--sp-black);
+  padding: 20px;
+  height: 100%;
+  overflow-y: auto;
+
+  color: var(--sp-light);
+}
+
+.sidebar a {
+  color: var(--sp-light);
+}
+
+.logo {
+  color: var(--sp-white);
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.nav-item {
+  display: block;
+  padding: 10px 0;
+  font-size: 14px;
+  color: var(--sp-white);
+}
+
+.nav-item.active {
+  font-weight: bold;
+}
+
+.player-list {
+  margin-top: 20px;
+  border-top: 1px solid var(--sp-gray);
+  padding-top: 20px;
+}
+
+.player-list h3 {
+  font-size: 13px;
+  color: var(--sp-white);
+
+  letter-spacing: 1px;
+  padding-bottom: 10px;
+}
+
+.playerlist-item {
+  display: block;
+  padding: 6px 0;
+  font-size: 14px;
+}
+
+/* 메인 */
+.main-content {
+  flex: 1;
+
+  padding: 30px;
+
+  background: linear-gradient(var(--sp-dark), var(--sp-black));
+  height: 100%;
+  overflow-y: auto;
+}
+
+.main-content h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.album-grid {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 20px;
+}
+
+.album-card {
+  /* flex: 1 1 160px; */
+  max-width: 200px;
+  width: calc(33.33% - 14px);
+  background: var(--sp-gray);
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.album-card img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 4px;
+
+  display: block;
+  margin-bottom: 10px;
+}
+
+.album-card h4 {
+  font-size: 14px;
+  margin-bottom: 4px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.album-card p {
+  font-size: 12px;
+  color: var(--sp-light);
+}
+
+/* 하단 플레이어 */
+.player {
+  display: flex;
+  align-items: center;
+
+  gap: 20px;
+  padding: 0 20px;
+
+  width: 100%;
+  height: var(--player-height);
+
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+
+  background-color: var(--sp-dark);
+  border-top: 1px solid var(--sp-gray);
+}
+
+.player-info {
+  min-width: 220px;
+
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.player-info img {
+  flex-shrink: 0;
+
+  width: 50px;
+  height: 50px;
+  border-radius: 4px;
+}
+
+.player-text {
+  width: inherit;
+}
+
+.song-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.song-artist {
+  font-size: 12px;
+  color: var(--sp-light);
+
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.player-controls {
+  flex: 0 0 auto;
+
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.player-controls button {
+  background: none;
+  border: none;
+  color: var(--sp-light);
+  font-size: 16px;
+  cursor: pointer;
+
+  transition: color .2s ease;
+}
+
+.player-controls button:hover {
+  color: var(--sp-white);
+}
+
+.play-btn {
+  transition: transform .2s ease;
+}
+
+.play-btn:hover {
+  transform: scale(1.3);
+}
+
+.player-bar {
+  flex: 1;
+
+  height: 4px;
+  background-color: var(--sp-gray);
+  border-radius: 2px;
+
+  cursor: pointer;
+  transition: transform .2s ease;
+}
+
+.player-bar:hover {
+  /* height: 10px; */
+  transform: scaleY(2.5);
+}
+
+.progress {
+  background-color: var(--sp-green);
+
+  width: 35%;
+  height: 100%;
+  border-radius: 2px;
+}
+
+
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+
+  .main-content {
+    padding: 20px;
+  }
+
+  .main-content h2 {
+    font-size: 22px;
+  }
+
+  .album-card {
+    /* flex: 1 1 140px; */
+    /* max-width: none; */
+  }
+
+  .player-info {
+    flex: 1 1 auto;
+  }
+
+  .player-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+    border-radius: 0;
+  }
+
+}
